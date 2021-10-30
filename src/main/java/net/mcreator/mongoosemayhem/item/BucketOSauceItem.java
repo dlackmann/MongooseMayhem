@@ -98,6 +98,7 @@ public class BucketOSauceItem extends MongooseMayhemModElements.ModElement {
 			ItemStack itemstack = context.getItem();
 			{
 				Map<String, Object> $_dependencies = new HashMap<>();
+				$_dependencies.put("direction", direction);
 				$_dependencies.put("entity", entity);
 				$_dependencies.put("x", x);
 				$_dependencies.put("y", y);

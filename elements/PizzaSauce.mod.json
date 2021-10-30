@@ -3,9 +3,9 @@
   "_type": "fluid",
   "definition": {
     "name": "Pizza Sauce",
-    "bucketName": "Pizza Sauce Bucket",
+    "bucketName": "Bucket O Sauce",
     "textureStill": "pizzasaucestill",
-    "textureFlowing": "pizzasaucestill",
+    "textureFlowing": "pizzasauceflowing",
     "tintType": "No tint",
     "canMultiply": false,
     "flowRate": 30,
@@ -22,7 +22,7 @@
     "isGas": false,
     "temperature": 300,
     "type": "LAVA",
-    "generateBucket": true,
+    "generateBucket": false,
     "textureBucket": "saucebucket",
     "creativeTab": {
       "value": "FOOD"

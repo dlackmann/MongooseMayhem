@@ -398,7 +398,7 @@
       "ids": {},
       "registry_name": "pizza_sauce",
       "metadata": {
-        "gb": true
+        "gb": false
       }
     },
     {
@@ -411,6 +411,10 @@
       "registry_name": "bucket_o_sauce_right_clicked_on_block",
       "metadata": {
         "dependencies": [
+          {
+            "name": "direction",
+            "type": "direction"
+          },
           {
             "name": "entity",
             "type": "entity"
@@ -426,6 +430,27 @@
           {
             "name": "z",
             "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "BucketOSaucePickup",
+      "type": "procedure",
+      "sortid": 38,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "bucket_o_sauce_pickup",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
           },
           {
             "name": "world",
@@ -460,7 +485,7 @@
       "subtitles.tableactingup": "TableActingUp",
       "item.mongoose_mayhem.hammah": "Hammah",
       "item.mongoose_mayhem.mootzerella": "Mootzerella",
-      "item.mongoose_mayhem.pizza_sauce_bucket": "Pizza Sauce Bucket",
+      "item.mongoose_mayhem.pizza_sauce_bucket": "Bucket O Sauce",
       "fluid.mongoose_mayhem.pizza_sauce": "Pizza Sauce",
       "item.mongoose_mayhem.tomatuh": "Tomatuh",
       "block.mongoose_mayhem.peppereeni_bush": "Peppereeni Bush",

@@ -34,10 +34,7 @@ import net.minecraft.state.StateContainer;
 import net.minecraft.particles.ParticleTypes;
 import net.minecraft.particles.IParticleData;
 import net.minecraft.item.Rarity;
-import net.minecraft.item.Items;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Item;
-import net.minecraft.item.BucketItem;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.fluid.FlowingFluid;
@@ -86,9 +83,9 @@ public class PizzaSauceBlock extends MongooseMayhemModElements.ModElement {
 		fluidproperties = new ForgeFlowingFluid.Properties(() -> still, () -> flowing,
 				FluidAttributes
 						.builder(new ResourceLocation("mongoose_mayhem:blocks/pizzasaucestill"),
-								new ResourceLocation("mongoose_mayhem:blocks/pizzasaucestill"))
+								new ResourceLocation("mongoose_mayhem:blocks/pizzasauceflowing"))
 						.luminosity(0).density(1000).viscosity(1000).temperature(300).rarity(Rarity.COMMON)).explosionResistance(100f).tickRate(30)
-								.levelDecreasePerBlock(2).slopeFindDistance(4).bucket(() -> bucket).block(() -> block);
+								.levelDecreasePerBlock(2).slopeFindDistance(4).block(() -> block);
 		still = (FlowingFluid) new CustomFlowingFluid.Source(fluidproperties).setRegistryName("pizza_sauce");
 		flowing = (FlowingFluid) new CustomFlowingFluid.Flowing(fluidproperties).setRegistryName("pizza_sauce_flowing");
 		elements.blocks
@@ -98,9 +95,6 @@ public class PizzaSauceBlock extends MongooseMayhemModElements.ModElement {
 						return true;
 					}
 				}.setRegistryName("pizza_sauce"));
-		elements.items.add(() -> new BucketItem(still,
-				new Item.Properties().containerItem(Items.BUCKET).maxStackSize(1).group(ItemGroup.FOOD).rarity(Rarity.COMMON))
-						.setRegistryName("pizza_sauce_bucket"));
 	}
 	public static abstract class CustomFlowingFluid extends ForgeFlowingFluid {
 		public CustomFlowingFluid(Properties properties) {
