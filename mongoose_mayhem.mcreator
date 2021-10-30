@@ -334,6 +334,15 @@
           }
         ]
       }
+    },
+    {
+      "name": "Testing",
+      "type": "item",
+      "sortid": 30,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "testing"
     }
   ],
   "variable_elements": [],
@@ -358,6 +367,7 @@
   "language_map": {
     "en_us": {
       "item.mongoose_mayhem.table_side_wing_spawn_egg": "Table Side Wing Spawn Egg",
+      "item.mongoose_mayhem.testing": "Testing",
       "subtitles.tableactingup": "TableActingUp",
       "item.mongoose_mayhem.issa_kniofe": "Issa Kniofe",
       "item.mongoose_mayhem.peppereeni_seeds": "Peppereeni Seeds",
