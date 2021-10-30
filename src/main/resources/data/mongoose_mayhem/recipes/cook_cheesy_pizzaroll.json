@@ -1,0 +1,12 @@
+{
+  "group": "mongoose_mayhem",
+  "type": "minecraft:smelting",
+  "experience": 1,
+  "cookingtime": 100,
+  "ingredient": {
+    "item": "mongoose_mayhem:pizzaroll"
+  },
+  "result": {
+    "item": "mongoose_mayhem:cooked_cheesy_pizzaroll"
+  }
+}

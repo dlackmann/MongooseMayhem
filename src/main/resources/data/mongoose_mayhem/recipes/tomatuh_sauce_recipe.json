@@ -1,0 +1,42 @@
+{
+  "group": "mongoose_mayhem",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "mongoose_mayhem:hammah"
+    },
+    "1": {
+      "item": "mongoose_mayhem:tomatuh"
+    },
+    "2": {
+      "item": "mongoose_mayhem:tomatuh"
+    },
+    "3": {
+      "item": "mongoose_mayhem:tomatuh"
+    },
+    "4": {
+      "item": "mongoose_mayhem:tomatuh"
+    },
+    "5": {
+      "item": "mongoose_mayhem:tomatuh"
+    },
+    "6": {
+      "item": "mongoose_mayhem:tomatuh"
+    },
+    "7": {
+      "item": "mongoose_mayhem:tomatuh"
+    },
+    "8": {
+      "item": "minecraft:bucket"
+    }
+  },
+  "result": {
+    "item": "mongoose_mayhem:bucket_o_sauce",
+    "count": 1
+  }
+}

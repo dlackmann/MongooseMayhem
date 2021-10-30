@@ -6,16 +6,24 @@ import net.minecraftforge.registries.ObjectHolder;
 import net.minecraft.world.World;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.Direction;
+import net.minecraft.util.ActionResultType;
 import net.minecraft.item.Rarity;
+import net.minecraft.item.ItemUseContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Item;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.block.BlockState;
 
+import net.mcreator.mongoosemayhem.procedures.BucketOSauceRightClickedOnBlockProcedure;
 import net.mcreator.mongoosemayhem.MongooseMayhemModElements;
 
+import java.util.Map;
 import java.util.List;
+import java.util.HashMap;
 
 @MongooseMayhemModElements.ModElement.Tag
 public class BucketOSauceItem extends MongooseMayhemModElements.ModElement {
@@ -31,8 +39,28 @@ public class BucketOSauceItem extends MongooseMayhemModElements.ModElement {
 	}
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
-			super(new Item.Properties().group(ItemGroup.FOOD).maxStackSize(64).rarity(Rarity.COMMON));
+			super(new Item.Properties().group(ItemGroup.FOOD).maxDamage(100).rarity(Rarity.COMMON));
 			setRegistryName("bucket_o_sauce");
+		}
+
+		@Override
+		public boolean hasContainerItem() {
+			return true;
+		}
+
+		@Override
+		public ItemStack getContainerItem(ItemStack itemstack) {
+			ItemStack retval = new ItemStack(this);
+			retval.setDamage(itemstack.getDamage() + 1);
+			if (retval.getDamage() >= retval.getMaxDamage()) {
+				return ItemStack.EMPTY;
+			}
+			return retval;
+		}
+
+		@Override
+		public boolean isRepairable(ItemStack itemstack) {
+			return false;
 		}
 
 		@Override
@@ -54,6 +82,30 @@ public class BucketOSauceItem extends MongooseMayhemModElements.ModElement {
 		public void addInformation(ItemStack itemstack, World world, List<ITextComponent> list, ITooltipFlag flag) {
 			super.addInformation(itemstack, world, list, flag);
 			list.add(new StringTextComponent("The sauce seems to have stained the bucket"));
+		}
+
+		@Override
+		public ActionResultType onItemUseFirst(ItemStack stack, ItemUseContext context) {
+			ActionResultType retval = super.onItemUseFirst(stack, context);
+			World world = context.getWorld();
+			BlockPos pos = context.getPos();
+			PlayerEntity entity = context.getPlayer();
+			Direction direction = context.getFace();
+			BlockState blockstate = world.getBlockState(pos);
+			int x = pos.getX();
+			int y = pos.getY();
+			int z = pos.getZ();
+			ItemStack itemstack = context.getItem();
+			{
+				Map<String, Object> $_dependencies = new HashMap<>();
+				$_dependencies.put("entity", entity);
+				$_dependencies.put("x", x);
+				$_dependencies.put("y", y);
+				$_dependencies.put("z", z);
+				$_dependencies.put("world", world);
+				BucketOSauceRightClickedOnBlockProcedure.executeProcedure($_dependencies);
+			}
+			return retval;
 		}
 	}
 }

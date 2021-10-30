@@ -10,18 +10,18 @@
     "creativeTab": {
       "value": "FOOD"
     },
-    "stackSize": 64,
+    "stackSize": 1,
     "enchantability": 0,
     "useDuration": 0,
     "toolType": 1.0,
-    "damageCount": 0,
+    "damageCount": 100,
     "recipeRemainder": {
       "value": ""
     },
     "destroyAnyBlock": false,
     "immuneToFire": false,
-    "stayInGridWhenCrafting": false,
-    "damageOnCrafting": false,
+    "stayInGridWhenCrafting": true,
+    "damageOnCrafting": true,
     "enableMeleeDamage": false,
     "damageVsEntity": 0.0,
     "specialInfo": [
@@ -31,6 +31,9 @@
     "guiBoundTo": "<NONE>",
     "inventorySize": 9,
     "inventoryStackSize": 64,
+    "onRightClickedOnBlock": {
+      "name": "BucketOSauceRightClickedOnBlock"
+    },
     "hasDispenseBehavior": false
   }
 }
