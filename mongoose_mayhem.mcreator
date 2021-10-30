@@ -334,15 +334,6 @@
           }
         ]
       }
-    },
-    {
-      "name": "Wipple",
-      "type": "item",
-      "sortid": 30,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "wipple"
     }
   ],
   "variable_elements": [],
@@ -366,7 +357,6 @@
   ],
   "language_map": {
     "en_us": {
-      "item.mongoose_mayhem.wipple": "Wipple",
       "item.mongoose_mayhem.table_side_wing_spawn_egg": "Table Side Wing Spawn Egg",
       "subtitles.tableactingup": "TableActingUp",
       "item.mongoose_mayhem.issa_kniofe": "Issa Kniofe",
