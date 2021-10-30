@@ -1,0 +1,22 @@
+{
+  "tableheehee": {
+    "category": "neutral",
+    "subtitle": "subtitles.tableheehee",
+    "sounds": [
+      {
+        "name": "mongoose_mayhem:heeeee",
+        "stream": false
+      }
+    ]
+  },
+  "tableactingup": {
+    "category": "neutral",
+    "subtitle": "subtitles.tableactingup",
+    "sounds": [
+      {
+        "name": "mongoose_mayhem:were-the-jews-acting-up",
+        "stream": false
+      }
+    ]
+  }
+}

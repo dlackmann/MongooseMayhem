@@ -1,0 +1,10 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "crop": "pepperonicroptop"
+      },
+      "name": "default"
+    }
+  }
+}

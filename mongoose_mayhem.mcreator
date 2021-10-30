@@ -1,0 +1,406 @@
+{
+  "id_map": {},
+  "mod_elements": [
+    {
+      "name": "TableSideWing",
+      "type": "livingentity",
+      "sortid": 1,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "table_side_wing"
+    },
+    {
+      "name": "Pizzaroll",
+      "type": "item",
+      "sortid": 2,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "pizzaroll"
+    },
+    {
+      "name": "Slicedpeppereeniitem",
+      "type": "item",
+      "sortid": 4,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "slicedpeppereeniitem"
+    },
+    {
+      "name": "PeppereeniesPlantDestroyedByExplosion",
+      "type": "procedure",
+      "sortid": 5,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "peppereenies_plant_destroyed_by_explosion",
+      "metadata": {
+        "dependencies": []
+      }
+    },
+    {
+      "name": "ChedderIngot",
+      "type": "item",
+      "sortid": 7,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "chedder_ingot"
+    },
+    {
+      "name": "Mootzerella",
+      "type": "item",
+      "sortid": 8,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "mootzerella"
+    },
+    {
+      "name": "BucketOSauce",
+      "type": "item",
+      "sortid": 9,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "bucket_o_sauce"
+    },
+    {
+      "name": "Tomatuh",
+      "type": "item",
+      "sortid": 10,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "tomatuh"
+    },
+    {
+      "name": "PeppereeniSeeds",
+      "type": "item",
+      "sortid": 11,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "peppereeni_seeds"
+    },
+    {
+      "name": "BigOlPeppereeni",
+      "type": "food",
+      "sortid": 12,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "big_ol_peppereeni"
+    },
+    {
+      "name": "PeppereeniStage0",
+      "type": "block",
+      "sortid": 13,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "peppereeni_stage_0"
+    },
+    {
+      "name": "PeppereeniStage1",
+      "type": "block",
+      "sortid": 14,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "peppereeni_stage_1"
+    },
+    {
+      "name": "PeppereeniStage2",
+      "type": "block",
+      "sortid": 15,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "peppereeni_stage_2"
+    },
+    {
+      "name": "PeppereeniStage3",
+      "type": "block",
+      "sortid": 16,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "peppereeni_stage_3"
+    },
+    {
+      "name": "PeppereeniStage4",
+      "type": "block",
+      "sortid": 17,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "peppereeni_stage_4"
+    },
+    {
+      "name": "PeppereeniStage5",
+      "type": "block",
+      "sortid": 18,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "peppereeni_stage_5"
+    },
+    {
+      "name": "PeppereeniSeedsRightClickedOnBlock",
+      "type": "procedure",
+      "sortid": 19,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "peppereeni_seeds_right_clicked_on_block",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ProcedureCropBlockUpdateTick",
+      "type": "procedure",
+      "sortid": 20,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "procedure_crop_block_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "PeppereeniLoot",
+      "type": "loottable",
+      "sortid": 21,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "peppereeni_loot"
+    },
+    {
+      "name": "SlicinPeppereenies",
+      "type": "recipe",
+      "sortid": 22,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "slicin_peppereenies"
+    },
+    {
+      "name": "IssaKniofe",
+      "type": "tool",
+      "sortid": 23,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "issa_kniofe"
+    },
+    {
+      "name": "KniofeTime",
+      "type": "recipe",
+      "sortid": 24,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "kniofe_time"
+    },
+    {
+      "name": "PeppereeniBush",
+      "type": "plant",
+      "sortid": 25,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "peppereeni_bush"
+    },
+    {
+      "name": "TomatuhPlant",
+      "type": "plant",
+      "sortid": 26,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "tomatuh_plant"
+    },
+    {
+      "name": "TomatuhPlantLoot",
+      "type": "loottable",
+      "sortid": 27,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "tomatuh_plant_loot"
+    },
+    {
+      "name": "PeppereeniBushPlantDestroyedByPlayer",
+      "type": "procedure",
+      "sortid": 28,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "peppereeni_bush_plant_destroyed_by_player",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "PeppereeniBushPlantRightClicked",
+      "type": "procedure",
+      "sortid": 29,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "peppereeni_bush_plant_right_clicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    }
+  ],
+  "variable_elements": [],
+  "sound_elements": [
+    {
+      "name": "tableheehee",
+      "files": [
+        "heeeee"
+      ],
+      "category": "neutral",
+      "subtitle": "TableSideHeeHee"
+    },
+    {
+      "name": "tableactingup",
+      "files": [
+        "were-the-jews-acting-up"
+      ],
+      "category": "neutral",
+      "subtitle": "TableActingUp"
+    }
+  ],
+  "language_map": {
+    "en_us": {
+      "item.mongoose_mayhem.table_side_wing_spawn_egg": "Table Side Wing Spawn Egg",
+      "subtitles.tableactingup": "TableActingUp",
+      "item.mongoose_mayhem.issa_kniofe": "Issa Kniofe",
+      "item.mongoose_mayhem.peppereeni_seeds": "Peppereeni Seeds",
+      "block.mongoose_mayhem.peppereeni_stage_1": "Peppereeni Stage 1",
+      "block.mongoose_mayhem.peppereeni_stage_2": "Peppereeni Stage 2",
+      "subtitles.tableheehee": "TableSideHeeHee",
+      "item.mongoose_mayhem.mootzerella": "Mootzerella",
+      "block.mongoose_mayhem.peppereeni_stage_3": "Peppereeni Stage 3",
+      "block.mongoose_mayhem.peppereeni_stage_4": "Peppereeni Stage 4",
+      "block.mongoose_mayhem.peppereeni_stage_5": "Peppereeni Stage 5",
+      "item.mongoose_mayhem.big_ol_peppereeni": "Big Ol Peppereeni",
+      "item.mongoose_mayhem.tomatuh": "Tomatuh",
+      "item.mongoose_mayhem.chedder_ingot": "Chedder Ingot",
+      "block.mongoose_mayhem.peppereeni_bush": "Peppereeni Bush",
+      "block.mongoose_mayhem.peppereeni_stage_0": "Peppereeni Stage 0",
+      "block.mongoose_mayhem.tomatuh_plant": "Tomatuh Plant",
+      "entity.mongoose_mayhem.table_side_wing": "Table Side Wing",
+      "item.mongoose_mayhem.pizzaroll": "Pizza roll",
+      "item.mongoose_mayhem.slicedpeppereeniitem": "Sliced Peppereeni",
+      "item.mongoose_mayhem.bucket_o_sauce": "Bucket O Sauce"
+    }
+  },
+  "foldersRoot": {
+    "name": "~",
+    "children": []
+  },
+  "workspaceSettings": {
+    "modid": "mongoose_mayhem",
+    "modName": "Mongoose Mayhem",
+    "version": "1.0.0",
+    "author": "Coolermaster NR200P, MCreator",
+    "websiteURL": "https://mcreator.net",
+    "license": "Academic Free License v3.0",
+    "disableForgeVersionCheck": true,
+    "serverSideOnly": false,
+    "requiredMods": [],
+    "dependencies": [],
+    "dependants": [],
+    "mcreatorDependencies": [],
+    "currentGenerator": "forge-1.16.5",
+    "credits": "Created using mod maker MCreator - https://mcreator.net/about",
+    "modElementsPackage": "net.mcreator.mongoosemayhem",
+    "lockBaseModFiles": false
+  },
+  "mcreatorVersion": 202100236710
+}

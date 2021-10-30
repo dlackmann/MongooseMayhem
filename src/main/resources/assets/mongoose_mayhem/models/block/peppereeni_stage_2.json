@@ -1,0 +1,8 @@
+{
+  "parent": "mongoose_mayhem:custom/stage_2",
+  "textures": {
+    "all": "mongoose_mayhem:blocks/peppereenie_stage_2",
+    "particle": "mongoose_mayhem:blocks/peppereenie_stage_2",
+    "crop": "mongoose_mayhem:blocks/peppereenie_stage_2"
+  }
+}

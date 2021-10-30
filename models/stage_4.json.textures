@@ -1,0 +1,10 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "crop": "peppereeni_stage_4"
+      },
+      "name": "default"
+    }
+  }
+}
