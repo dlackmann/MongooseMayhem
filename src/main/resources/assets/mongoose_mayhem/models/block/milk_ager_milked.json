@@ -3,7 +3,7 @@
   "textures": {
     "all": "mongoose_mayhem:blocks/milkagertexture---copy",
     "particle": "mongoose_mayhem:blocks/milkagertexture---copy",
-    "0": "mongoose_mayhem:blocks/milkagertexture---copy",
+    "0": "mongoose_mayhem:blocks/milkagertexture-ani",
     "missing": "mongoose_mayhem:blocks/"
   }
 }

@@ -22,7 +22,7 @@
     "isGas": false,
     "temperature": 300,
     "type": "WATER",
-    "generateBucket": true,
+    "generateBucket": false,
     "textureBucket": "melkbucket",
     "creativeTab": {
       "value": "MISC"

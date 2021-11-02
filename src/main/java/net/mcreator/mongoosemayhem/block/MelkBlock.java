@@ -15,10 +15,7 @@ import net.minecraft.world.IBlockReader;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.item.Rarity;
-import net.minecraft.item.Items;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Item;
-import net.minecraft.item.BucketItem;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.fluid.FlowingFluid;
 import net.minecraft.client.renderer.RenderTypeLookup;
@@ -64,7 +61,7 @@ public class MelkBlock extends MongooseMayhemModElements.ModElement {
 				FluidAttributes
 						.builder(new ResourceLocation("mongoose_mayhem:blocks/milk_still"), new ResourceLocation("mongoose_mayhem:blocks/milk_flow"))
 						.luminosity(0).density(1000).viscosity(1000).temperature(300).rarity(Rarity.COMMON)).explosionResistance(100f).tickRate(5)
-								.levelDecreasePerBlock(1).slopeFindDistance(4).bucket(() -> bucket).block(() -> block);
+								.levelDecreasePerBlock(1).slopeFindDistance(4).block(() -> block);
 		still = (FlowingFluid) new ForgeFlowingFluid.Source(fluidproperties).setRegistryName("melk");
 		flowing = (FlowingFluid) new ForgeFlowingFluid.Flowing(fluidproperties).setRegistryName("melk_flowing");
 		elements.blocks.add(() -> new FlowingFluidBlock(still,
@@ -74,8 +71,5 @@ public class MelkBlock extends MongooseMayhemModElements.ModElement {
 				return true;
 			}
 		}.setRegistryName("melk"));
-		elements.items.add(() -> new BucketItem(still,
-				new Item.Properties().containerItem(Items.BUCKET).maxStackSize(1).group(ItemGroup.MISC).rarity(Rarity.COMMON))
-						.setRegistryName("melk_bucket"));
 	}
 }

@@ -25,14 +25,16 @@ import net.minecraft.client.entity.player.AbstractClientPlayerEntity;
 import net.minecraft.client.Minecraft;
 import net.minecraft.block.Blocks;
 
+import net.mcreator.mongoosemayhem.item.MelkBucketItem;
 import net.mcreator.mongoosemayhem.item.BucketOSauceItem;
 import net.mcreator.mongoosemayhem.block.PizzaSauceBlock;
+import net.mcreator.mongoosemayhem.block.MelkBlock;
 import net.mcreator.mongoosemayhem.MongooseMayhemMod;
 
 import java.util.Map;
 import java.util.HashMap;
 
-public class BucketOSaucePickupProcedure {
+public class ModdedBucketPickupProcedure {
 	@Mod.EventBusSubscriber
 	private static class GlobalTrigger {
 		@SubscribeEvent
@@ -58,12 +60,12 @@ public class BucketOSaucePickupProcedure {
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
-				MongooseMayhemMod.LOGGER.warn("Failed to load dependency entity for procedure BucketOSaucePickup!");
+				MongooseMayhemMod.LOGGER.warn("Failed to load dependency entity for procedure ModdedBucketPickup!");
 			return;
 		}
 		if (dependencies.get("world") == null) {
 			if (!dependencies.containsKey("world"))
-				MongooseMayhemMod.LOGGER.warn("Failed to load dependency world for procedure BucketOSaucePickup!");
+				MongooseMayhemMod.LOGGER.warn("Failed to load dependency world for procedure ModdedBucketPickup!");
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
@@ -136,8 +138,7 @@ public class BucketOSaucePickupProcedure {
 													entity.getEyePosition(1f).add(entity.getLook(1f).x * localRaytaceDistance,
 															entity.getLook(1f).y * localRaytaceDistance, entity.getLook(1f).z * localRaytaceDistance),
 													RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getPos().getZ())),
-									(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
-											.getValue(new ResourceLocation("item.bucket.fill_lava")),
+									(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("item.bucket.fill")),
 									SoundCategory.BLOCKS, (float) 1, (float) 1);
 						} else {
 							((World) world).playSound(
@@ -153,8 +154,7 @@ public class BucketOSaucePickupProcedure {
 											entity.getEyePosition(1f).add(entity.getLook(1f).x * localRaytaceDistance,
 													entity.getLook(1f).y * localRaytaceDistance, entity.getLook(1f).z * localRaytaceDistance),
 											RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getPos().getZ()),
-									(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
-											.getValue(new ResourceLocation("item.bucket.fill_lava")),
+									(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("item.bucket.fill")),
 									SoundCategory.BLOCKS, (float) 1, (float) 1, false);
 						}
 					}
@@ -197,6 +197,129 @@ public class BucketOSaucePickupProcedure {
 						}
 					}
 					break;
+				}
+				if (((((world
+						.getFluidState(new BlockPos(
+								(int) (entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
+										entity.getEyePosition(1f).add(entity.getLook(1f).x * localRaytaceDistance,
+												entity.getLook(1f).y * localRaytaceDistance, entity.getLook(1f).z * localRaytaceDistance),
+										RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getPos().getX()),
+								(int) (entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
+										entity.getEyePosition(1f).add(entity.getLook(1f).x * localRaytaceDistance,
+												entity.getLook(1f).y * localRaytaceDistance, entity.getLook(1f).z * localRaytaceDistance),
+										RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getPos().getY()),
+								(int) (entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
+										entity.getEyePosition(1f).add(entity.getLook(1f).x * localRaytaceDistance,
+												entity.getLook(1f).y * localRaytaceDistance, entity.getLook(1f).z * localRaytaceDistance),
+										RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getPos().getZ())))
+						.getBlockState()).getFluidState().isSource()) == (true))
+						&& ((world
+								.getFluidState(new BlockPos(
+										(int) (entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
+												entity.getEyePosition(1f).add(entity.getLook(1f).x * localRaytaceDistance,
+														entity.getLook(1f).y * localRaytaceDistance, entity.getLook(1f).z * localRaytaceDistance),
+												RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getPos().getX()),
+										(int) (entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
+												entity.getEyePosition(1f).add(entity.getLook(1f).x * localRaytaceDistance,
+														entity.getLook(1f).y * localRaytaceDistance, entity.getLook(1f).z * localRaytaceDistance),
+												RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getPos().getY()),
+										(int) (entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
+												entity.getEyePosition(1f).add(entity.getLook(1f).x * localRaytaceDistance,
+														entity.getLook(1f).y * localRaytaceDistance, entity.getLook(1f).z * localRaytaceDistance),
+												RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getPos().getZ())))
+								.getBlockState()).getBlock() == MelkBlock.block))) {
+					if (entity instanceof LivingEntity) {
+						((LivingEntity) entity).swing(Hand.MAIN_HAND, true);
+					}
+					world.setBlockState(
+							new BlockPos(
+									(int) (entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
+											entity.getEyePosition(1f).add(entity.getLook(1f).x * localRaytaceDistance,
+													entity.getLook(1f).y * localRaytaceDistance, entity.getLook(1f).z * localRaytaceDistance),
+											RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getPos().getX()),
+									(int) (entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
+											entity.getEyePosition(1f).add(entity.getLook(1f).x * localRaytaceDistance,
+													entity.getLook(1f).y * localRaytaceDistance, entity.getLook(1f).z * localRaytaceDistance),
+											RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getPos().getY()),
+									(int) (entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
+											entity.getEyePosition(1f).add(entity.getLook(1f).x * localRaytaceDistance,
+													entity.getLook(1f).y * localRaytaceDistance, entity.getLook(1f).z * localRaytaceDistance),
+											RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getPos().getZ())),
+							Blocks.AIR.getDefaultState(), 3);
+					if ((!(world.isRemote()))) {
+						if (world instanceof World && !world.isRemote()) {
+							((World) world).playSound(null,
+									new BlockPos(
+											(int) (entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
+													entity.getEyePosition(1f).add(entity.getLook(1f).x * localRaytaceDistance,
+															entity.getLook(1f).y * localRaytaceDistance, entity.getLook(1f).z * localRaytaceDistance),
+													RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getPos().getX()),
+											(int) (entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
+													entity.getEyePosition(1f).add(entity.getLook(1f).x * localRaytaceDistance,
+															entity.getLook(1f).y * localRaytaceDistance, entity.getLook(1f).z * localRaytaceDistance),
+													RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getPos().getY()),
+											(int) (entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
+													entity.getEyePosition(1f).add(entity.getLook(1f).x * localRaytaceDistance,
+															entity.getLook(1f).y * localRaytaceDistance, entity.getLook(1f).z * localRaytaceDistance),
+													RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getPos().getZ())),
+									(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("item.bucket.fill")),
+									SoundCategory.BLOCKS, (float) 1, (float) 1);
+						} else {
+							((World) world).playSound(
+									(entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
+											entity.getEyePosition(1f).add(entity.getLook(1f).x * localRaytaceDistance,
+													entity.getLook(1f).y * localRaytaceDistance, entity.getLook(1f).z * localRaytaceDistance),
+											RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getPos().getX()),
+									(entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
+											entity.getEyePosition(1f).add(entity.getLook(1f).x * localRaytaceDistance,
+													entity.getLook(1f).y * localRaytaceDistance, entity.getLook(1f).z * localRaytaceDistance),
+											RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getPos().getY()),
+									(entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
+											entity.getEyePosition(1f).add(entity.getLook(1f).x * localRaytaceDistance,
+													entity.getLook(1f).y * localRaytaceDistance, entity.getLook(1f).z * localRaytaceDistance),
+											RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getPos().getZ()),
+									(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("item.bucket.fill")),
+									SoundCategory.BLOCKS, (float) 1, (float) 1, false);
+						}
+					}
+					if ((!(new Object() {
+						public boolean checkGamemode(Entity _ent) {
+							if (_ent instanceof ServerPlayerEntity) {
+								return ((ServerPlayerEntity) _ent).interactionManager.getGameType() == GameType.CREATIVE;
+							} else if (_ent instanceof PlayerEntity && _ent.world.isRemote()) {
+								NetworkPlayerInfo _npi = Minecraft.getInstance().getConnection()
+										.getPlayerInfo(((AbstractClientPlayerEntity) _ent).getGameProfile().getId());
+								return _npi != null && _npi.getGameType() == GameType.CREATIVE;
+							}
+							return false;
+						}
+					}.checkGamemode(entity)))) {
+						if (entity instanceof LivingEntity) {
+							ItemStack _setstack = new ItemStack(Items.BUCKET);
+							_setstack.setCount(
+									(int) (((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY))
+											.getCount()) - 1));
+							((LivingEntity) entity).setHeldItem(Hand.MAIN_HAND, _setstack);
+							if (entity instanceof ServerPlayerEntity)
+								((ServerPlayerEntity) entity).inventory.markDirty();
+						}
+						if ((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)
+								.getItem() == Blocks.AIR.asItem())) {
+							if (entity instanceof LivingEntity) {
+								ItemStack _setstack = new ItemStack(MelkBucketItem.block);
+								_setstack.setCount((int) 1);
+								((LivingEntity) entity).setHeldItem(Hand.MAIN_HAND, _setstack);
+								if (entity instanceof ServerPlayerEntity)
+									((ServerPlayerEntity) entity).inventory.markDirty();
+							}
+						} else {
+							if (entity instanceof PlayerEntity) {
+								ItemStack _setstack = new ItemStack(MelkBucketItem.block);
+								_setstack.setCount((int) 1);
+								ItemHandlerHelper.giveItemToPlayer(((PlayerEntity) entity), _setstack);
+							}
+						}
+					}
 				}
 				localRaytaceDistance = (double) (localRaytaceDistance + 1);
 			}
