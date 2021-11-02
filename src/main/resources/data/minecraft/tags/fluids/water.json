@@ -1,4 +1,7 @@
 {
   "replace": false,
-  "values": []
+  "values": [
+    "mongoose_mayhem:melk",
+    "mongoose_mayhem:melk_flowing"
+  ]
 }

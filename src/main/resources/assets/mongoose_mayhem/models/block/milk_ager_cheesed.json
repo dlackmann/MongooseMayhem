@@ -1,0 +1,9 @@
+{
+  "parent": "mongoose_mayhem:custom/milkager_cheesed",
+  "textures": {
+    "all": "mongoose_mayhem:blocks/milkagertexture---copy",
+    "particle": "mongoose_mayhem:blocks/milkagertexture---copy",
+    "0": "mongoose_mayhem:blocks/milkagertexture---copy",
+    "missing": "mongoose_mayhem:blocks/"
+  }
+}
