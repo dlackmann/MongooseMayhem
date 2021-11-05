@@ -9,6 +9,8 @@ import net.minecraftforge.api.distmarker.Dist;
 
 import net.minecraft.world.World;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.BlockPos;
@@ -21,6 +23,7 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Item;
 import net.minecraft.item.BlockItem;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.block.material.MaterialColor;
@@ -61,6 +64,14 @@ public class MilkAgerBlock extends MongooseMayhemModElements.ModElement {
 			super(Block.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance(2f, 10f).setLightLevel(s -> 0).harvestLevel(1)
 					.harvestTool(ToolType.PICKAXE).setRequiresTool().notSolid().setOpaque((bs, br, bp) -> false));
 			setRegistryName("milk_ager");
+		}
+
+		@Override
+		@OnlyIn(Dist.CLIENT)
+		public void addInformation(ItemStack itemstack, IBlockReader world, List<ITextComponent> list, ITooltipFlag flag) {
+			super.addInformation(itemstack, world, list, flag);
+			list.add(new StringTextComponent("For fermenting cheese"));
+			list.add(new StringTextComponent("stanky business"));
 		}
 
 		@Override

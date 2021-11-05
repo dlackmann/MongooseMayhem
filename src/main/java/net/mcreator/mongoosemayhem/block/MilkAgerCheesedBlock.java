@@ -15,9 +15,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.Hand;
 import net.minecraft.util.Direction;
 import net.minecraft.util.ActionResultType;
-import net.minecraft.loot.LootContext;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Item;
 import net.minecraft.item.BlockItem;
 import net.minecraft.entity.player.PlayerEntity;
@@ -32,9 +30,7 @@ import net.mcreator.mongoosemayhem.procedures.MilkAgerCheesedOnBlockRightClicked
 import net.mcreator.mongoosemayhem.MongooseMayhemModElements;
 
 import java.util.Map;
-import java.util.List;
 import java.util.HashMap;
-import java.util.Collections;
 
 @MongooseMayhemModElements.ModElement.Tag
 public class MilkAgerCheesedBlock extends MongooseMayhemModElements.ModElement {
@@ -47,7 +43,7 @@ public class MilkAgerCheesedBlock extends MongooseMayhemModElements.ModElement {
 	@Override
 	public void initElements() {
 		elements.blocks.add(() -> new CustomBlock());
-		elements.items.add(() -> new BlockItem(block, new Item.Properties().group(ItemGroup.BREWING)).setRegistryName(block.getRegistryName()));
+		elements.items.add(() -> new BlockItem(block, new Item.Properties().group(null)).setRegistryName(block.getRegistryName()));
 	}
 
 	@Override
@@ -75,14 +71,6 @@ public class MilkAgerCheesedBlock extends MongooseMayhemModElements.ModElement {
 		@Override
 		public ItemStack getPickBlock(BlockState state, RayTraceResult target, IBlockReader world, BlockPos pos, PlayerEntity player) {
 			return new ItemStack(MilkAgerBlock.block);
-		}
-
-		@Override
-		public List<ItemStack> getDrops(BlockState state, LootContext.Builder builder) {
-			List<ItemStack> dropsOriginal = super.getDrops(state, builder);
-			if (!dropsOriginal.isEmpty())
-				return dropsOriginal;
-			return Collections.singletonList(new ItemStack(MilkAgerBlock.block));
 		}
 
 		@Override

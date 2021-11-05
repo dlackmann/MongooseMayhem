@@ -32,21 +32,21 @@
         "subtract": false
       }
     ],
-    "name": "Milk Ager Cheesed",
+    "name": "The Curdler Cheesed",
     "specialInfo": [],
     "hardness": 1.0,
     "resistance": 10.0,
     "hasGravity": false,
     "isWaterloggable": false,
     "creativeTab": {
-      "value": "BREWING"
+      "value": "No creative tab entry"
     },
     "destroyTool": "pickaxe",
     "customDrop": {
       "value": "CUSTOM:MilkAger"
     },
     "dropAmount": 1,
-    "useLootTableForDrops": false,
+    "useLootTableForDrops": true,
     "enchantPowerBonus": 0.0,
     "plantsGrowOn": false,
     "canRedstoneConnect": false,

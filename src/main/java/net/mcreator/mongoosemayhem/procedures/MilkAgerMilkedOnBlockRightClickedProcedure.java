@@ -1,5 +1,7 @@
 package net.mcreator.mongoosemayhem.procedures;
 
+import net.minecraftforge.items.ItemHandlerHelper;
+
 import net.minecraft.world.IWorld;
 import net.minecraft.world.GameType;
 import net.minecraft.util.math.BlockPos;
@@ -13,6 +15,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.client.network.play.NetworkPlayerInfo;
 import net.minecraft.client.entity.player.AbstractClientPlayerEntity;
 import net.minecraft.client.Minecraft;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.BlockState;
 
 import net.mcreator.mongoosemayhem.item.MelkBucketItem;
@@ -53,6 +56,7 @@ public class MilkAgerMilkedOnBlockRightClickedProcedure {
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		IWorld world = (IWorld) dependencies.get("world");
+		double localRaytaceDistance = 0;
 		if ((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getItem() == Items.BUCKET)) {
 			{
 				BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
@@ -71,17 +75,30 @@ public class MilkAgerMilkedOnBlockRightClickedProcedure {
 					return false;
 				}
 			}.checkGamemode(entity)))) {
-				if (entity instanceof PlayerEntity) {
-					ItemStack _stktoremove = ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY);
-					((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-							((PlayerEntity) entity).container.func_234641_j_());
-				}
 				if (entity instanceof LivingEntity) {
-					ItemStack _setstack = new ItemStack(MelkBucketItem.block);
-					_setstack.setCount((int) 1);
+					ItemStack _setstack = new ItemStack(Items.BUCKET);
+					_setstack.setCount(
+							(int) (((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)).getCount())
+									- 1));
 					((LivingEntity) entity).setHeldItem(Hand.MAIN_HAND, _setstack);
 					if (entity instanceof ServerPlayerEntity)
 						((ServerPlayerEntity) entity).inventory.markDirty();
+				}
+				if ((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getItem() == Blocks.AIR
+						.asItem())) {
+					if (entity instanceof LivingEntity) {
+						ItemStack _setstack = new ItemStack(MelkBucketItem.block);
+						_setstack.setCount((int) 1);
+						((LivingEntity) entity).setHeldItem(Hand.MAIN_HAND, _setstack);
+						if (entity instanceof ServerPlayerEntity)
+							((ServerPlayerEntity) entity).inventory.markDirty();
+					}
+				} else {
+					if (entity instanceof PlayerEntity) {
+						ItemStack _setstack = new ItemStack(MelkBucketItem.block);
+						_setstack.setCount((int) 1);
+						ItemHandlerHelper.giveItemToPlayer(((PlayerEntity) entity), _setstack);
+					}
 				}
 			}
 		}

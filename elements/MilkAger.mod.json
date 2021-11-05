@@ -32,8 +32,11 @@
         "subtract": false
       }
     ],
-    "name": "Milk Ager",
-    "specialInfo": [],
+    "name": "The Curdler",
+    "specialInfo": [
+      "For fermenting cheese",
+      "stanky business"
+    ],
     "hardness": 2.0,
     "resistance": 10.0,
     "hasGravity": false,
