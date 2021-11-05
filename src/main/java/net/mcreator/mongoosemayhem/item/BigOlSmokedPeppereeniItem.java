@@ -3,27 +3,21 @@ package net.mcreator.mongoosemayhem.item;
 
 import net.minecraftforge.registries.ObjectHolder;
 
-import net.minecraft.world.World;
-import net.minecraft.util.text.StringTextComponent;
-import net.minecraft.util.text.ITextComponent;
 import net.minecraft.item.UseAction;
 import net.minecraft.item.Rarity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Item;
 import net.minecraft.item.Food;
-import net.minecraft.client.util.ITooltipFlag;
 
 import net.mcreator.mongoosemayhem.MongooseMayhemModElements;
 
-import java.util.List;
-
 @MongooseMayhemModElements.ModElement.Tag
-public class BigOlPeppereeniItem extends MongooseMayhemModElements.ModElement {
-	@ObjectHolder("mongoose_mayhem:big_ol_peppereeni")
+public class BigOlSmokedPeppereeniItem extends MongooseMayhemModElements.ModElement {
+	@ObjectHolder("mongoose_mayhem:big_ol_smoked_peppereeni")
 	public static final Item block = null;
-	public BigOlPeppereeniItem(MongooseMayhemModElements instance) {
-		super(instance, 12);
+	public BigOlSmokedPeppereeniItem(MongooseMayhemModElements instance) {
+		super(instance, 50);
 	}
 
 	@Override
@@ -33,19 +27,13 @@ public class BigOlPeppereeniItem extends MongooseMayhemModElements.ModElement {
 	public static class FoodItemCustom extends Item {
 		public FoodItemCustom() {
 			super(new Item.Properties().group(ItemGroup.FOOD).maxStackSize(64).rarity(Rarity.COMMON)
-					.food((new Food.Builder()).hunger(2).saturation(0.4f).setAlwaysEdible().meat().build()));
-			setRegistryName("big_ol_peppereeni");
+					.food((new Food.Builder()).hunger(5).saturation(1f).build()));
+			setRegistryName("big_ol_smoked_peppereeni");
 		}
 
 		@Override
 		public UseAction getUseAction(ItemStack itemstack) {
 			return UseAction.EAT;
-		}
-
-		@Override
-		public void addInformation(ItemStack itemstack, World world, List<ITextComponent> list, ITooltipFlag flag) {
-			super.addInformation(itemstack, world, list, flag);
-			list.add(new StringTextComponent("Nice glizzy my guy"));
 		}
 	}
 }

@@ -10,6 +10,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.event.world.BiomeLoadingEvent;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.DungeonHooks;
 
 import net.minecraft.world.server.ServerWorld;
 import net.minecraft.world.gen.Heightmap;
@@ -26,16 +27,13 @@ import net.minecraft.item.SpawnEggItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Item;
-import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.ai.goal.TemptGoal;
 import net.minecraft.entity.ai.goal.SwimGoal;
 import net.minecraft.entity.ai.goal.RandomWalkingGoal;
 import net.minecraft.entity.ai.goal.OpenDoorGoal;
-import net.minecraft.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.entity.ai.goal.LookRandomlyGoal;
 import net.minecraft.entity.ai.goal.LookAtGoal;
-import net.minecraft.entity.ai.goal.HurtByTargetGoal;
 import net.minecraft.entity.ai.goal.FollowParentGoal;
 import net.minecraft.entity.ai.goal.EatGrassGoal;
 import net.minecraft.entity.ai.goal.BreedGoal;
@@ -54,7 +52,6 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.Blocks;
 
 import net.mcreator.mongoosemayhem.item.PizzarollItem;
-import net.mcreator.mongoosemayhem.item.IssaKniofeItem;
 import net.mcreator.mongoosemayhem.entity.renderer.TableSideWingRenderer;
 import net.mcreator.mongoosemayhem.MongooseMayhemModElements;
 
@@ -79,7 +76,24 @@ public class TableSideWingEntity extends MongooseMayhemModElements.ModElement {
 
 	@SubscribeEvent
 	public void addFeatureToBiomes(BiomeLoadingEvent event) {
-		event.getSpawns().getSpawner(EntityClassification.CREATURE).add(new MobSpawnInfo.Spawners(entity, 20, 1, 1));
+		boolean biomeCriteria = false;
+		if (new ResourceLocation("beach").equals(event.getName()))
+			biomeCriteria = true;
+		if (new ResourceLocation("birch_forest").equals(event.getName()))
+			biomeCriteria = true;
+		if (new ResourceLocation("forest").equals(event.getName()))
+			biomeCriteria = true;
+		if (new ResourceLocation("wooded_hills").equals(event.getName()))
+			biomeCriteria = true;
+		if (new ResourceLocation("plains").equals(event.getName()))
+			biomeCriteria = true;
+		if (new ResourceLocation("river").equals(event.getName()))
+			biomeCriteria = true;
+		if (new ResourceLocation("swamp").equals(event.getName()))
+			biomeCriteria = true;
+		if (!biomeCriteria)
+			return;
+		event.getSpawns().getSpawner(EntityClassification.CREATURE).add(new MobSpawnInfo.Spawners(entity, 6, 1, 1));
 	}
 
 	@Override
@@ -87,6 +101,7 @@ public class TableSideWingEntity extends MongooseMayhemModElements.ModElement {
 		EntitySpawnPlacementRegistry.register(entity, EntitySpawnPlacementRegistry.PlacementType.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES,
 				(entityType, world, reason, pos,
 						random) -> (world.getBlockState(pos.down()).getMaterial() == Material.ORGANIC && world.getLightSubtracted(pos, 0) > 8));
+		DungeonHooks.addDungeonMob(entity, 180);
 	}
 	private static class EntityAttributesRegisterHandler {
 		@SubscribeEvent
@@ -108,12 +123,10 @@ public class TableSideWingEntity extends MongooseMayhemModElements.ModElement {
 
 		public CustomEntity(EntityType<CustomEntity> type, World world) {
 			super(type, world);
-			experienceValue = 0;
+			experienceValue = 3;
 			setNoAI(false);
 			setCustomName(new StringTextComponent("Table"));
 			setCustomNameVisible(true);
-			this.setItemStackToSlot(EquipmentSlotType.MAINHAND, new ItemStack(IssaKniofeItem.block));
-			this.setItemStackToSlot(EquipmentSlotType.OFFHAND, new ItemStack(PizzarollItem.block));
 		}
 
 		@Override
@@ -136,8 +149,6 @@ public class TableSideWingEntity extends MongooseMayhemModElements.ModElement {
 			this.goalSelector.addGoal(10, new OpenDoorGoal(this, true));
 			this.goalSelector.addGoal(11, new BreakBlockGoal(Blocks.CARROTS, this, 1, (int) 3));
 			this.goalSelector.addGoal(12, new BreakBlockGoal(Blocks.POTATOES, this, 1, (int) 3));
-			this.goalSelector.addGoal(13, new MeleeAttackGoal(this, 1.2, false));
-			this.targetSelector.addGoal(14, new HurtByTargetGoal(this));
 		}
 
 		@Override
@@ -145,14 +156,14 @@ public class TableSideWingEntity extends MongooseMayhemModElements.ModElement {
 			return CreatureAttribute.UNDEFINED;
 		}
 
-		@Override
-		public net.minecraft.util.SoundEvent getAmbientSound() {
-			return (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("mongoose_mayhem:tableheehee"));
+		protected void dropSpecialItems(DamageSource source, int looting, boolean recentlyHitIn) {
+			super.dropSpecialItems(source, looting, recentlyHitIn);
+			this.entityDropItem(new ItemStack(PizzarollItem.block));
 		}
 
 		@Override
 		public net.minecraft.util.SoundEvent getHurtSound(DamageSource ds) {
-			return (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("mongoose_mayhem:tableactingup"));
+			return (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation(""));
 		}
 
 		@Override

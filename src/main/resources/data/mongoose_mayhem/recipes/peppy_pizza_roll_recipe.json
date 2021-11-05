@@ -26,17 +26,17 @@
       "item": "mongoose_mayhem:mootzerella"
     },
     "6": {
-      "item": "mongoose_mayhem:chedder_ingot"
+      "item": "mongoose_mayhem:slicedpeppereeniitem"
     },
     "7": {
       "item": "minecraft:wheat"
     },
     "8": {
-      "item": "mongoose_mayhem:mootzerella"
+      "item": "mongoose_mayhem:slicedpeppereeniitem"
     }
   },
   "result": {
-    "item": "mongoose_mayhem:pizzaroll",
+    "item": "mongoose_mayhem:peppy_pizzaroll",
     "count": 3
   }
 }

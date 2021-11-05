@@ -3,24 +3,25 @@
   "_type": "food",
   "definition": {
     "renderType": 0,
-    "texture": "peppereenos",
+    "texture": "cookedpeppypizzarolltexture",
     "customModelName": "Normal",
-    "name": "Big Ol Peppereeni",
+    "name": "Cooked Peppy Pizzaroll",
     "rarity": "COMMON",
     "specialInfo": [
-      "Nice glizzy my guy"
+      "Table's favorite food",
+      "always gets him in the mood"
     ],
     "creativeTab": {
       "value": "FOOD"
     },
     "stackSize": 64,
     "nutritionalValue": 2,
-    "saturation": 0.4,
-    "eatingSpeed": 32,
+    "saturation": 0.1,
+    "eatingSpeed": 15,
     "resultItem": {
       "value": ""
     },
-    "forDogs": true,
+    "forDogs": false,
     "isAlwaysEdible": true,
     "animation": "eat",
     "hasGlow": false

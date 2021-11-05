@@ -3,9 +3,9 @@
   "_type": "item",
   "definition": {
     "renderType": 0,
-    "texture": "pizzaroll",
+    "texture": "peppypizzarollrecipe",
     "customModelName": "Normal",
-    "name": "Pizza roll",
+    "name": "Peppereeni Pizza roll",
     "rarity": "COMMON",
     "creativeTab": {
       "value": "FOOD"

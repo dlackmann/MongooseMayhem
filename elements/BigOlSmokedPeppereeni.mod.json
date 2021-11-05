@@ -3,25 +3,23 @@
   "_type": "food",
   "definition": {
     "renderType": 0,
-    "texture": "peppereenos",
+    "texture": "smokespeppereenitexture",
     "customModelName": "Normal",
-    "name": "Big Ol Peppereeni",
+    "name": "Big Ol Smoked Peppereeni",
     "rarity": "COMMON",
-    "specialInfo": [
-      "Nice glizzy my guy"
-    ],
+    "specialInfo": [],
     "creativeTab": {
       "value": "FOOD"
     },
     "stackSize": 64,
-    "nutritionalValue": 2,
-    "saturation": 0.4,
+    "nutritionalValue": 5,
+    "saturation": 1.0,
     "eatingSpeed": 32,
     "resultItem": {
       "value": ""
     },
-    "forDogs": true,
-    "isAlwaysEdible": true,
+    "forDogs": false,
+    "isAlwaysEdible": false,
     "animation": "eat",
     "hasGlow": false
   }

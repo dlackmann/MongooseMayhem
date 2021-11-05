@@ -19,11 +19,11 @@ import net.mcreator.mongoosemayhem.MongooseMayhemModElements;
 import java.util.List;
 
 @MongooseMayhemModElements.ModElement.Tag
-public class BigOlPeppereeniItem extends MongooseMayhemModElements.ModElement {
-	@ObjectHolder("mongoose_mayhem:big_ol_peppereeni")
+public class CookedPeppereeniPizzarollItem extends MongooseMayhemModElements.ModElement {
+	@ObjectHolder("mongoose_mayhem:cooked_peppereeni_pizzaroll")
 	public static final Item block = null;
-	public BigOlPeppereeniItem(MongooseMayhemModElements instance) {
-		super(instance, 12);
+	public CookedPeppereeniPizzarollItem(MongooseMayhemModElements instance) {
+		super(instance, 49);
 	}
 
 	@Override
@@ -33,8 +33,13 @@ public class BigOlPeppereeniItem extends MongooseMayhemModElements.ModElement {
 	public static class FoodItemCustom extends Item {
 		public FoodItemCustom() {
 			super(new Item.Properties().group(ItemGroup.FOOD).maxStackSize(64).rarity(Rarity.COMMON)
-					.food((new Food.Builder()).hunger(2).saturation(0.4f).setAlwaysEdible().meat().build()));
-			setRegistryName("big_ol_peppereeni");
+					.food((new Food.Builder()).hunger(2).saturation(0.1f).setAlwaysEdible().build()));
+			setRegistryName("cooked_peppereeni_pizzaroll");
+		}
+
+		@Override
+		public int getUseDuration(ItemStack stack) {
+			return 15;
 		}
 
 		@Override
@@ -45,7 +50,8 @@ public class BigOlPeppereeniItem extends MongooseMayhemModElements.ModElement {
 		@Override
 		public void addInformation(ItemStack itemstack, World world, List<ITextComponent> list, ITooltipFlag flag) {
 			super.addInformation(itemstack, world, list, flag);
-			list.add(new StringTextComponent("Nice glizzy my guy"));
+			list.add(new StringTextComponent("Table's favorite food"));
+			list.add(new StringTextComponent("always gets him in the mood"));
 		}
 	}
 }

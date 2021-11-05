@@ -1,0 +1,12 @@
+{
+  "group": "mongoose_mayhem",
+  "type": "minecraft:smoking",
+  "experience": 1,
+  "cookingtime": 100,
+  "ingredient": {
+    "item": "mongoose_mayhem:big_ol_peppereeni"
+  },
+  "result": {
+    "item": "mongoose_mayhem:big_ol_smoked_peppereeni"
+  }
+}

@@ -28,19 +28,19 @@
         "value": "CUSTOM:Mootzerella"
       },
       {
-        "value": "CUSTOM:ChedderIngot"
+        "value": "CUSTOM:Slicedpeppereeniitem"
       },
       {
         "value": "Blocks.WHEAT"
       },
       {
-        "value": "CUSTOM:Mootzerella"
+        "value": "CUSTOM:Slicedpeppereeniitem"
       }
     ],
     "recipeReturnStack": {
-      "value": "CUSTOM:Pizzaroll"
+      "value": "CUSTOM:PeppyPizzaroll"
     },
-    "name": "cheesy_peppereeni_recipe",
+    "name": "peppy_pizza_roll_recipe",
     "namespace": "mod"
   }
 }

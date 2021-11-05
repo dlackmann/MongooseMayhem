@@ -1,0 +1,16 @@
+{
+  "group": "mongoose_mayhem",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "mongoose_mayhem:issa_kniofe"
+    },
+    {
+      "item": "mongoose_mayhem:cheeze_block"
+    }
+  ],
+  "result": {
+    "item": "mongoose_mayhem:chedder_ingot",
+    "count": 9
+  }
+}

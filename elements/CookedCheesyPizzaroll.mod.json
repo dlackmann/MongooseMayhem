@@ -7,7 +7,10 @@
     "customModelName": "Normal",
     "name": "Cooked Cheesy Pizzaroll",
     "rarity": "COMMON",
-    "specialInfo": [],
+    "specialInfo": [
+      "Table's favorite food",
+      "always gets him in the mood"
+    ],
     "creativeTab": {
       "value": "FOOD"
     },

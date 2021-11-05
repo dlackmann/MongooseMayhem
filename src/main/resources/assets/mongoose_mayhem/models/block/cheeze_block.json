@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "mongoose_mayhem:blocks/cheezeblocktexture",
+    "up": "mongoose_mayhem:blocks/cheezeblocktexture",
+    "north": "mongoose_mayhem:blocks/cheezeblocktexture",
+    "east": "mongoose_mayhem:blocks/cheezeblocktexture",
+    "south": "mongoose_mayhem:blocks/cheezeblocktexture",
+    "west": "mongoose_mayhem:blocks/cheezeblocktexture",
+    "particle": "mongoose_mayhem:blocks/cheezeblocktexture"
+  }
+}

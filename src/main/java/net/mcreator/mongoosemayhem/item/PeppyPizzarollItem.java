@@ -18,11 +18,11 @@ import net.mcreator.mongoosemayhem.MongooseMayhemModElements;
 import java.util.List;
 
 @MongooseMayhemModElements.ModElement.Tag
-public class PizzarollItem extends MongooseMayhemModElements.ModElement {
-	@ObjectHolder("mongoose_mayhem:pizzaroll")
+public class PeppyPizzarollItem extends MongooseMayhemModElements.ModElement {
+	@ObjectHolder("mongoose_mayhem:peppy_pizzaroll")
 	public static final Item block = null;
-	public PizzarollItem(MongooseMayhemModElements instance) {
-		super(instance, 2);
+	public PeppyPizzarollItem(MongooseMayhemModElements instance) {
+		super(instance, 48);
 	}
 
 	@Override
@@ -32,7 +32,7 @@ public class PizzarollItem extends MongooseMayhemModElements.ModElement {
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
 			super(new Item.Properties().group(ItemGroup.FOOD).maxStackSize(64).rarity(Rarity.COMMON));
-			setRegistryName("pizzaroll");
+			setRegistryName("peppy_pizzaroll");
 		}
 
 		@Override
