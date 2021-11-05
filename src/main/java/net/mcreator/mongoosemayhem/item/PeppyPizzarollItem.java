@@ -1,35 +1,24 @@
 
 package net.mcreator.mongoosemayhem.item;
 
-import net.minecraftforge.registries.ObjectHolder;
-
-import net.minecraft.world.World;
-import net.minecraft.util.text.StringTextComponent;
-import net.minecraft.util.text.ITextComponent;
-import net.minecraft.item.Rarity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.Item;
-import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.block.BlockState;
-
-import net.mcreator.mongoosemayhem.MongooseMayhemModElements;
-
-import java.util.List;
-
 @MongooseMayhemModElements.ModElement.Tag
 public class PeppyPizzarollItem extends MongooseMayhemModElements.ModElement {
+
 	@ObjectHolder("mongoose_mayhem:peppy_pizzaroll")
 	public static final Item block = null;
+
 	public PeppyPizzarollItem(MongooseMayhemModElements instance) {
 		super(instance, 48);
+
 	}
 
 	@Override
 	public void initElements() {
 		elements.items.add(() -> new ItemCustom());
 	}
+
 	public static class ItemCustom extends Item {
+
 		public ItemCustom() {
 			super(new Item.Properties().group(ItemGroup.FOOD).maxStackSize(64).rarity(Rarity.COMMON));
 			setRegistryName("peppy_pizzaroll");
@@ -55,5 +44,7 @@ public class PeppyPizzarollItem extends MongooseMayhemModElements.ModElement {
 			super.addInformation(itemstack, world, list, flag);
 			list.add(new StringTextComponent("Time to pop this baby into a furnace"));
 		}
+
 	}
+
 }

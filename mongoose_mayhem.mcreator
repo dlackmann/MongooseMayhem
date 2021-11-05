@@ -532,7 +532,28 @@
       "ids": {},
       "registry_name": "milk_ager_on_block_right_clicked",
       "metadata": {
-        "dependencies": []
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
       }
     },
     {
@@ -623,31 +644,13 @@
       }
     },
     {
-      "name": "PeppyPizzaRollRecipe",
-      "type": "recipe",
-      "sortid": 47,
+      "name": "CheezeBlock",
+      "type": "block",
+      "sortid": 51,
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "peppy_pizza_roll_recipe"
-    },
-    {
-      "name": "PeppyPizzaroll",
-      "type": "item",
-      "sortid": 48,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "peppy_pizzaroll"
-    },
-    {
-      "name": "CookedPeppereeniPizzaroll",
-      "type": "food",
-      "sortid": 49,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "cooked_peppereeni_pizzaroll"
+      "registry_name": "cheeze_block"
     },
     {
       "name": "BigOlSmokedPeppereeni",
@@ -659,22 +662,22 @@
       "registry_name": "big_ol_smoked_peppereeni"
     },
     {
-      "name": "SmokedBigPeppereeni",
+      "name": "PeppyPizzaRollRecipe",
       "type": "recipe",
-      "sortid": 50,
+      "sortid": 47,
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "smoked_big_peppereeni"
+      "registry_name": "peppy_pizza_roll_recipe"
     },
     {
-      "name": "CheezeBlock",
-      "type": "block",
-      "sortid": 51,
+      "name": "CookedPeppereeniPizzaroll",
+      "type": "food",
+      "sortid": 49,
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "cheeze_block"
+      "registry_name": "cooked_peppereeni_pizzaroll"
     },
     {
       "name": "Chedderingotrecipe",
@@ -684,6 +687,33 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "chedderingotrecipe"
+    },
+    {
+      "name": "PeppyPizzaroll",
+      "type": "item",
+      "sortid": 48,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "peppy_pizzaroll"
+    },
+    {
+      "name": "SmokedBigPeppereeni",
+      "type": "recipe",
+      "sortid": 50,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "smoked_big_peppereeni"
+    },
+    {
+      "name": "TEST",
+      "type": "item",
+      "sortid": 47,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "test"
     }
   ],
   "variable_elements": [],
@@ -714,11 +744,8 @@
       "item.mongoose_mayhem.hammah": "Hammah",
       "item.mongoose_mayhem.mootzerella": "Mootzerella",
       "block.mongoose_mayhem.milk_ager": "Milk Ager",
-      "block.mongoose_mayhem.cheeze_block": "Cheeze Block",
-      "item.mongoose_mayhem.cooked_peppereeni_pizzaroll": "Cooked Peppy Pizzaroll",
       "item.mongoose_mayhem.pizza_sauce_bucket": "Bucket O Sauce",
       "fluid.mongoose_mayhem.pizza_sauce": "Pizza Sauce",
-      "item.mongoose_mayhem.peppy_pizzaroll": "Peppereeni Pizza roll",
       "block.mongoose_mayhem.milk_ager_milked": "Milk Ager Milked",
       "item.mongoose_mayhem.tomatuh": "Tomatuh",
       "block.mongoose_mayhem.peppereeni_bush": "Peppereeni Bush",
@@ -733,7 +760,6 @@
       "block.mongoose_mayhem.peppereeni_stage_3": "Peppereeni Stage 3",
       "block.mongoose_mayhem.peppereeni_stage_4": "Peppereeni Stage 4",
       "block.mongoose_mayhem.peppereeni_stage_5": "Peppereeni Stage 5",
-      "item.mongoose_mayhem.big_ol_smoked_peppereeni": "Big Ol Smoked Peppereeni",
       "block.mongoose_mayhem.melk": "Melk",
       "item.mongoose_mayhem.big_ol_peppereeni": "Big Ol Peppereeni",
       "item.mongoose_mayhem.chedder_ingot": "Chedder Ingot",
@@ -749,15 +775,15 @@
     "name": "~",
     "children": [
       {
+        "name": "Items",
+        "children": []
+      },
+      {
         "name": "Procedures",
         "children": []
       },
       {
         "name": "Food",
-        "children": []
-      },
-      {
-        "name": "Items",
         "children": []
       },
       {
