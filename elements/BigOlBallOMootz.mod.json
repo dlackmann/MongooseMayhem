@@ -3,37 +3,34 @@
   "_type": "item",
   "definition": {
     "renderType": 0,
-    "texture": "saucebucket",
+    "texture": "bigballomootztexture",
     "customModelName": "Normal",
-    "name": "Bucket O Sauce",
+    "name": "Big Ol Ball O Mootz",
     "rarity": "COMMON",
     "creativeTab": {
       "value": "FOOD"
     },
-    "stackSize": 1,
+    "stackSize": 16,
     "enchantability": 0,
     "useDuration": 0,
     "toolType": 1.0,
-    "damageCount": 1,
+    "damageCount": 0,
     "recipeRemainder": {
-      "value": "Items.BUCKET"
+      "value": ""
     },
     "destroyAnyBlock": false,
     "immuneToFire": false,
-    "stayInGridWhenCrafting": true,
-    "damageOnCrafting": true,
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
     "enableMeleeDamage": false,
     "damageVsEntity": 0.0,
     "specialInfo": [
-      "The sauce seems to have stained the bucket"
+      "Oh that's a nice balluh mootz"
     ],
     "hasGlow": false,
     "guiBoundTo": "<NONE>",
     "inventorySize": 9,
     "inventoryStackSize": 64,
-    "onRightClickedOnBlock": {
-      "name": "BucketOSauceRightClickedOnBlock"
-    },
     "hasDispenseBehavior": false
   }
 }

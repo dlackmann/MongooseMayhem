@@ -10,6 +10,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.Direction;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.item.Rarity;
+import net.minecraft.item.Items;
 import net.minecraft.item.ItemUseContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemGroup;
@@ -39,8 +40,18 @@ public class MelkBucketItem extends MongooseMayhemModElements.ModElement {
 	}
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
-			super(new Item.Properties().group(ItemGroup.MISC).maxStackSize(1).rarity(Rarity.COMMON));
+			super(new Item.Properties().group(ItemGroup.FOOD).maxStackSize(1).rarity(Rarity.COMMON));
 			setRegistryName("melk_bucket");
+		}
+
+		@Override
+		public boolean hasContainerItem() {
+			return true;
+		}
+
+		@Override
+		public ItemStack getContainerItem(ItemStack itemstack) {
+			return new ItemStack(Items.BUCKET);
 		}
 
 		@Override

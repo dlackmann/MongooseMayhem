@@ -1,0 +1,16 @@
+{
+  "group": "mongoose_mayhem",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "mongoose_mayhem:issa_kniofe"
+    },
+    {
+      "item": "mongoose_mayhem:big_ol_ball_o_mootz"
+    }
+  ],
+  "result": {
+    "item": "mongoose_mayhem:mootzerella",
+    "count": 6
+  }
+}

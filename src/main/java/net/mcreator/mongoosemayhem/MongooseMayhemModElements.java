@@ -49,6 +49,14 @@ public class MongooseMayhemModElements {
 				new net.minecraft.util.SoundEvent(new ResourceLocation("mongoose_mayhem", "tableheehee")));
 		sounds.put(new ResourceLocation("mongoose_mayhem", "tableactingup"),
 				new net.minecraft.util.SoundEvent(new ResourceLocation("mongoose_mayhem", "tableactingup")));
+		sounds.put(new ResourceLocation("mongoose_mayhem", "tableburphiccup"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("mongoose_mayhem", "tableburphiccup")));
+		sounds.put(new ResourceLocation("mongoose_mayhem", "tableneedshisdad"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("mongoose_mayhem", "tableneedshisdad")));
+		sounds.put(new ResourceLocation("mongoose_mayhem", "tablecough"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("mongoose_mayhem", "tablecough")));
+		sounds.put(new ResourceLocation("mongoose_mayhem", "tablescreaming"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("mongoose_mayhem", "tablescreaming")));
 		try {
 			ModFileScanData modFileInfo = ModList.get().getModFileById("mongoose_mayhem").getFile().getScanResult();
 			Set<ModFileScanData.AnnotationData> annotations = modFileInfo.getAnnotations();

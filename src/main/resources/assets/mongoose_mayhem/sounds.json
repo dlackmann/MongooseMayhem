@@ -18,5 +18,45 @@
         "stream": false
       }
     ]
+  },
+  "tableburphiccup": {
+    "category": "voice",
+    "subtitle": "subtitles.tableburphiccup",
+    "sounds": [
+      {
+        "name": "mongoose_mayhem:table_burphiccup",
+        "stream": false
+      }
+    ]
+  },
+  "tableneedshisdad": {
+    "category": "voice",
+    "subtitle": "subtitles.tableneedshisdad",
+    "sounds": [
+      {
+        "name": "mongoose_mayhem:table_needmydad",
+        "stream": false
+      }
+    ]
+  },
+  "tablecough": {
+    "category": "voice",
+    "subtitle": "subtitles.tablecough",
+    "sounds": [
+      {
+        "name": "mongoose_mayhem:table_cough",
+        "stream": false
+      }
+    ]
+  },
+  "tablescreaming": {
+    "category": "voice",
+    "subtitle": "subtitles.tablescreaming",
+    "sounds": [
+      {
+        "name": "mongoose_mayhem:table_dying",
+        "stream": false
+      }
+    ]
   }
 }

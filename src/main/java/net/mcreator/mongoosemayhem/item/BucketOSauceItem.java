@@ -10,6 +10,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.Direction;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.item.Rarity;
+import net.minecraft.item.Items;
 import net.minecraft.item.ItemUseContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemGroup;
@@ -39,7 +40,7 @@ public class BucketOSauceItem extends MongooseMayhemModElements.ModElement {
 	}
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
-			super(new Item.Properties().group(ItemGroup.FOOD).maxDamage(100).rarity(Rarity.COMMON));
+			super(new Item.Properties().group(ItemGroup.FOOD).maxDamage(1).rarity(Rarity.COMMON));
 			setRegistryName("bucket_o_sauce");
 		}
 
@@ -50,17 +51,7 @@ public class BucketOSauceItem extends MongooseMayhemModElements.ModElement {
 
 		@Override
 		public ItemStack getContainerItem(ItemStack itemstack) {
-			ItemStack retval = new ItemStack(this);
-			retval.setDamage(itemstack.getDamage() + 1);
-			if (retval.getDamage() >= retval.getMaxDamage()) {
-				return ItemStack.EMPTY;
-			}
-			return retval;
-		}
-
-		@Override
-		public boolean isRepairable(ItemStack itemstack) {
-			return false;
+			return new ItemStack(Items.BUCKET);
 		}
 
 		@Override

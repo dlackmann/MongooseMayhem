@@ -1,0 +1,12 @@
+{
+  "group": "mongoose_mayhem",
+  "type": "minecraft:smelting",
+  "experience": 1,
+  "cookingtime": 400,
+  "ingredient": {
+    "item": "mongoose_mayhem:melk_bucket"
+  },
+  "result": {
+    "item": "mongoose_mayhem:big_ol_ball_o_mootz"
+  }
+}
